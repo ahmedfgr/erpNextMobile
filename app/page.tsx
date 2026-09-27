@@ -11,6 +11,7 @@ import { OperationsTable } from '@/components/OperationsTable';
 import { TankModal } from '@/components/TankModal';
 import { ToastNotification } from '@/components/ToastNotification';
 import { BottomNav } from '@/components/BottomNav';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 export default function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -92,6 +93,9 @@ export default function DashboardPage() {
 
       {/* Toast Notification Alert */}
       <ToastNotification message={toastMessage} />
+
+      {/* Offline Status Warning Banner */}
+      <OfflineIndicator />
     </div>
   );
 }

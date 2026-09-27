@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface HeaderProps {
   searchQuery: string;
@@ -100,6 +101,9 @@ export function Header({
             </svg>
             <span>تصدير التقرير</span>
           </button>
+
+          {/* In-App PWA Install Button */}
+          <PWAInstallButton />
 
           {/* Notification Bell */}
           <div className="relative">
