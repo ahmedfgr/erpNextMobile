@@ -1,0 +1,6 @@
+{
+  "name": "NAFA - نظام إدارة المخازن والوقود المتكامل",
+  "description": "لوحة تحكم تفاعلية لإدارة المخازن ومراقبة مخزون الوقود وحركات التوريد والصرف الفورية",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
