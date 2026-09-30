@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Warehouse, Database } from 'lucide-react';
 import { Tank } from '@/types/tank';
 import { getLiquidY } from '@/data/tanks-data';
 
@@ -18,11 +19,16 @@ export function TankCard({ tank, onSelect }: TankCardProps) {
       {/* Tank Top Info */}
       <div>
         <div className="flex justify-between items-start">
-          <div>
-            <h3 className="text-lg font-black text-slate-900 group-hover:text-amber-600 transition-colors">
-              {tank.name}
-            </h3>
-            <span className="text-xs text-slate-400 font-mono font-bold">{tank.subTitle}</span>
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0 border border-slate-200/80 group-hover:bg-[#0089FF]/10 group-hover:text-[#0089FF] group-hover:border-[#0089FF]/30 transition-colors">
+              <Warehouse className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#0089FF] transition-colors">
+                {tank.name}
+              </h3>
+              <span className="text-xs text-slate-400 font-mono font-bold">{tank.subTitle}</span>
+            </div>
           </div>
           {/* Percentage Pill */}
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/70 text-xs font-bold text-slate-800 shadow-sm">

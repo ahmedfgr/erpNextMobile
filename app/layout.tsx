@@ -8,27 +8,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'NAFA - نظام إدارة المخازن والوقود المتكامل',
-  description: 'لوحة تحكم تفاعلية لإدارة المخازن ومراقبة مخزون الوقود وحركات التوريد والصرف الفورية',
+  title: 'فهد - نظام إدارة المخازن والأسطول المتكامل',
+  description: 'منظومة فهد لإدارة المخازن والوقود والأسطول والشاحنات والسائقين',
   manifest: '/manifest.webmanifest',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'NAFA',
+    title: 'فهد',
   },
   icons: {
     icon: '/icon.svg',
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'NAFA - نظام إدارة المخازن والوقود المتكامل',
-    description: 'لوحة تحكم تفاعلية لإدارة المخازن ومراقبة مخزون الوقود وحركات التوريد والصرف الفورية',
+    title: 'فهد - نظام إدارة المخازن والأسطول المتكامل',
+    description: 'منظومة فهد لإدارة المخازن والوقود والأسطول والشاحنات والسائقين',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NAFA - نظام إدارة المخازن والوقود المتكامل',
-    description: 'لوحة تحكم تفاعلية لإدارة المخازن ومراقبة مخزون الوقود وحركات التوريد والصرف الفورية',
+    title: 'فهد - نظام إدارة المخازن والأسطول المتكامل',
+    description: 'منظومة فهد لإدارة المخازن والوقود والأسطول والشاحنات والسائقين',
   },
 };
 
