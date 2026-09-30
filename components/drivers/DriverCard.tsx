@@ -43,7 +43,7 @@ export function DriverCard({ driver, onCallDriver, onSelectVehicle }: DriverCard
   return (
     <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
       <div>
-        {/* Top Header: Avatar & Name & Status (Employee ID completely removed) */}
+        {/* Top Header: Avatar & Name & Floating Status */}
         <div className="flex items-start justify-between gap-2 mb-3.5">
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12 rounded-2xl overflow-hidden border border-slate-200 shadow-xs shrink-0">
@@ -111,7 +111,7 @@ export function DriverCard({ driver, onCallDriver, onSelectVehicle }: DriverCard
           {driver.phone}
         </span>
 
-        {/* Call Driver Button: White background, rounded border, ERPNext blue icon, dark bold text */}
+        {/* Call Driver Button */}
         <button
           onClick={() => onCallDriver(driver)}
           className="flex items-center gap-2 px-3.5 py-1.5 bg-white hover:bg-slate-50 text-slate-900 rounded-full font-black border border-[#0089FF]/40 hover:border-[#0089FF] transition-all shadow-xs cursor-pointer active:scale-95"

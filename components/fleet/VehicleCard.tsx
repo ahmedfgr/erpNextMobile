@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Fuel, Gauge, User, Calendar, CreditCard, FileText, Truck } from 'lucide-react';
+import { Fuel, Gauge, Calendar, CreditCard, User, Truck, FileText } from 'lucide-react';
 import { Vehicle, WeightCategory } from '@/types/fleet';
 import { BrandLogo } from './BrandLogo';
 
@@ -70,27 +70,24 @@ export function VehicleCard({ vehicle, onSelect }: VehicleCardProps) {
       className="tank-card bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between cursor-pointer group"
     >
       <div>
-        {/* Top Weight (ERPNext Blue with Truck icon) & Status Bar (Dot + "في الصيانة") */}
+        {/* Top Weight (ERPNext Blue with Truck icon) & Floating Status Bar */}
         <div className="flex items-center justify-between gap-2 mb-3">
           {getWeightBadge(vehicle.weightCategory || 'heavy')}
           {getStatusBadge()}
         </div>
 
-        {/* Brand Logo & Clean Name Header (ID completely hidden) */}
+        {/* Brand Logo & Clean Name Header - Logo and Name ONLY, perfectly aligned */}
         <div className="flex items-center gap-3 mb-3.5">
           {/* Official Manufacturer Brand Logo */}
-          <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center p-2 shadow-sm shrink-0 border border-slate-800 group-hover:scale-105 transition-transform">
-            <BrandLogo brandKey={vehicle.brandKey || 'mercedes'} size={28} />
+          <div className="w-11 h-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center p-2 shadow-xs shrink-0 border border-slate-800 group-hover:scale-105 transition-transform">
+            <BrandLogo brandKey={vehicle.brandKey || 'mercedes'} size={26} />
           </div>
 
-          {/* Clean Name (e.g. Volvo FH16 / Mercedes-Benz Actros 3340) */}
+          {/* Clean Name Only (e.g. مرسيدس بنز أكتراس, تويوتا هايلكس دبل كاب, فولفو إف إتش 16) */}
           <div className="min-w-0 flex-1">
             <h3 className="text-sm sm:text-base font-black text-slate-900 line-clamp-1 group-hover:text-[#0089FF] transition-colors">
               {vehicle.name}
             </h3>
-            <p className="text-[11px] font-semibold text-slate-400 truncate">
-              {vehicle.brand}
-            </p>
           </div>
         </div>
 
@@ -115,7 +112,7 @@ export function VehicleCard({ vehicle, onSelect }: VehicleCardProps) {
           </div>
         </div>
 
-        {/* 4 Small Spec Components: Odometer, Max Load, Model Year, Plate Number */}
+        {/* 4 Spec Components: Odometer, Max Load, Model Year, Plate Number */}
         <div className="grid grid-cols-2 gap-2 text-[11px] font-bold text-slate-700 mb-3">
           {/* 1. Odometer */}
           <div className="flex items-center gap-1.5 bg-slate-50/90 p-2 rounded-xl border border-slate-100">
@@ -145,7 +142,7 @@ export function VehicleCard({ vehicle, onSelect }: VehicleCardProps) {
           </div>
         </div>
 
-        {/* Dedicated Description Space Under The Small Components */}
+        {/* Dedicated Description Space */}
         <div className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100/90 mb-3 text-right">
           <div className="flex items-center gap-1 text-[10px] font-bold text-slate-400 mb-0.5">
             <FileText className="w-3 h-3 text-slate-400" />

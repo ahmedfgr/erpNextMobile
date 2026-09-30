@@ -8,27 +8,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'فهد - نظام إدارة المخازن والأسطول المتكامل',
-  description: 'منظومة فهد لإدارة المخازن والوقود والأسطول والشاحنات والسائقين',
+  title: 'نظام إدارة المخزون والآليات',
+  description: 'نظام متكامل لإدارة المخزون، الوقود، والآليات والشاحنات وكادر السائقين',
   manifest: '/manifest.webmanifest',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'فهد',
+    title: 'إدارة المخزون والآليات',
   },
   icons: {
     icon: '/icon.svg',
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'فهد - نظام إدارة المخازن والأسطول المتكامل',
-    description: 'منظومة فهد لإدارة المخازن والوقود والأسطول والشاحنات والسائقين',
+    title: 'نظام إدارة المخزون والآليات',
+    description: 'نظام متكامل لإدارة المخزون، الوقود، والآليات والشاحنات وكادر السائقين',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'فهد - نظام إدارة المخازن والأسطول المتكامل',
-    description: 'منظومة فهد لإدارة المخازن والوقود والأسطول والشاحنات والسائقين',
+    title: 'نظام إدارة المخزون والآليات',
+    description: 'نظام متكامل لإدارة المخزون، الوقود، والآليات والشاحنات وكادر السائقين',
   },
 };
 
