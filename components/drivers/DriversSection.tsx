@@ -122,31 +122,28 @@ export function DriversSection({
       {/* Control Header & Action */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-sm">
         <div className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+          <div className="w-10 h-10 rounded-2xl bg-blue-50 flex items-center justify-center text-[#0089FF]">
             <Users className="w-5 h-5" />
           </div>
           <div>
             <h2 className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
               إدارة السائقين والمشغلين الميدانيين
             </h2>
-            <p className="text-xs text-slate-500 font-semibold">
-              متابعة السائقين، رخص القيادة، وتعيين الشاحنات والمركبات المخصصة
-            </p>
           </div>
         </div>
 
         <button
           onClick={onOpenAddDriver}
-          className="flex items-center justify-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer active:scale-95"
+          className="flex items-center justify-center gap-1.5 px-4 py-2 bg-[#0089FF] hover:bg-[#0076db] text-white rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer active:scale-95"
         >
-          <UserPlus className="w-4 h-4" />
+          <UserPlus className="w-4 h-4 text-white" />
           <span>إضافة سائق جديد</span>
         </button>
       </div>
 
-      {/* Filters and Search Bar */}
+      {/* Filters and Search Bar (بدون scroll في الفلتر) */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+        <div className="flex flex-wrap items-center gap-1.5">
           {[
             { id: 'all', label: 'كافة السائقين' },
             { id: 'available', label: 'المتاحين للعمل' },
@@ -156,7 +153,7 @@ export function DriversSection({
             <button
               key={tab.id}
               onClick={() => setFilterStatus(tab.id as typeof filterStatus)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 filterStatus === tab.id
                   ? 'bg-slate-900 text-white shadow-sm'
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80'

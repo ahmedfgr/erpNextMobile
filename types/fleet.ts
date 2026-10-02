@@ -30,6 +30,7 @@ export interface RefuelingRecord {
   tankName: string;
   liters: number;
   date: string;
+  time?: string;
   cost: number;
   fuelType: string;
   odometerReading: number;
@@ -38,6 +39,7 @@ export interface RefuelingRecord {
 export interface MaintenanceRequest {
   id: string;
   date: string;
+  time?: string;
   issueDescription: string;
   priority: 'low' | 'medium' | 'high' | 'critical';
   status: 'pending' | 'in_progress' | 'completed';

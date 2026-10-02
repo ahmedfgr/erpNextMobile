@@ -26,11 +26,15 @@ import { CreateMissionModal } from '@/components/fleet/CreateMissionModal';
 import { DriversSection } from '@/components/drivers/DriversSection';
 import { AddDriverModal } from '@/components/drivers/AddDriverModal';
 
+// Cost Reports Component
+import { MonthlyCostReportView } from '@/components/cost-reports/MonthlyCostReportView';
+
 export default function DashboardPage() {
   const [currentTab, setCurrentTab] = useState<MainNavTab>('tanks');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<TankCategory>('all');
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [isCostReportOpen, setIsCostReportOpen] = useState(false);
 
   // Tanks State
   const [tanksList, setTanksList] = useState<Tank[]>(TANKS_DATA);
@@ -290,16 +294,28 @@ export default function DashboardPage() {
 
         {currentTab === 'fleet' && (
           <>
-            {/* Fleet KPI Metrics Grid */}
-            <FleetKpiGrid vehicles={vehicles} />
+            {isCostReportOpen ? (
+              <MonthlyCostReportView
+                vehicles={vehicles}
+                onBack={() => setIsCostReportOpen(false)}
+              />
+            ) : (
+              <>
+                {/* Fleet KPI Metrics Grid */}
+                <FleetKpiGrid
+                  vehicles={vehicles}
+                  onOpenCostReport={() => setIsCostReportOpen(true)}
+                />
 
-            {/* Fleet & Vehicles Section */}
-            <FleetSection
-              vehicles={filteredVehicles}
-              onSelectVehicle={setSelectedVehicle}
-              onOpenAddVehicle={() => setIsAddVehicleOpen(true)}
-              onOpenCreateMission={() => setIsCreateMissionOpen(true)}
-            />
+                {/* Fleet & Vehicles Section */}
+                <FleetSection
+                  vehicles={filteredVehicles}
+                  onSelectVehicle={setSelectedVehicle}
+                  onOpenAddVehicle={() => setIsAddVehicleOpen(true)}
+                  onOpenCreateMission={() => setIsCreateMissionOpen(true)}
+                />
+              </>
+            )}
           </>
         )}
 

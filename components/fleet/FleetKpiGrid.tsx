@@ -6,9 +6,10 @@ import { Vehicle } from '@/types/fleet';
 
 interface FleetKpiGridProps {
   vehicles: Vehicle[];
+  onOpenCostReport?: () => void;
 }
 
-export function FleetKpiGrid({ vehicles }: FleetKpiGridProps) {
+export function FleetKpiGrid({ vehicles, onOpenCostReport }: FleetKpiGridProps) {
   const totalVehicles = vehicles.length;
   const onMission = vehicles.filter((v) => v.status === 'on_mission').length;
   const inMaintenance = vehicles.filter((v) => v.status === 'maintenance').length;
@@ -82,14 +83,18 @@ export function FleetKpiGrid({ vehicles }: FleetKpiGridProps) {
         </div>
       </div>
 
-      {/* 4: وقود الأسطول */}
-      <div className="kpi-card rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 flex flex-col justify-between min-h-[155px] sm:h-[165px] relative overflow-hidden group">
+      {/* 4: وقود الأسطول - ينقل لتقرير التكاليف */}
+      <div
+        onClick={onOpenCostReport}
+        className="kpi-card rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 flex flex-col justify-between min-h-[155px] sm:h-[165px] relative overflow-hidden group cursor-pointer hover:border-emerald-300 hover:shadow-md transition-all active:scale-[0.99]"
+        title="انقر لعرض تقرير التكاليف الشهرية للوقود والصيانة"
+      >
         <div className="flex items-start justify-between">
-          <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#ecfdf5] flex items-center justify-center text-[#059669] shadow-sm">
+          <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#ecfdf5] flex items-center justify-center text-[#059669] shadow-sm group-hover:scale-105 transition-transform">
             <Fuel className="w-4 h-4 sm:w-6 sm:h-6" />
           </div>
-          <span className="text-emerald-700 font-bold text-[10px] sm:text-xs bg-emerald-50 px-1.5 sm:px-2 py-0.5 rounded-full border border-emerald-100">
-            خزانات المركبات
+          <span className="text-emerald-700 font-bold text-[10px] sm:text-xs bg-emerald-50 px-1.5 sm:px-2 py-0.5 rounded-full border border-emerald-100 flex items-center gap-1 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+            تقرير التكاليف ←
           </span>
         </div>
         <div>
@@ -98,8 +103,8 @@ export function FleetKpiGrid({ vehicles }: FleetKpiGridProps) {
             <span className="text-lg sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">{totalFuelLiters.toLocaleString()}</span>
             <span className="text-[10px] sm:text-xs text-slate-400 font-bold">لتر ديزل/بنزين</span>
           </div>
-          <p className="text-[10px] sm:text-[11px] text-slate-400 font-semibold mt-1.5 sm:mt-2">
-            مغذى من محطات الشركة
+          <p className="text-[10px] sm:text-[11px] text-emerald-600 font-bold mt-1.5 sm:mt-2 flex items-center gap-1">
+            <span>انقر لمراجعة تكاليف الوقود والصيانة</span>
           </p>
         </div>
       </div>
